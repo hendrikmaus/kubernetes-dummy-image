@@ -1,7 +1,7 @@
 FROM golang:1.12.0-stretch as build-env
 WORKDIR /go/src/app
 ADD . /go/src/app
-RUN make build
+RUN make build-golang
 
 FROM debian:9-slim
 RUN apt-get update -q \

@@ -24,6 +24,10 @@ endif
 
 ##@ Build
 
+build-golang: ## Build golang app
+	go build -o pause
+.PHONY: build-golang
+
 build: ## Build container image
 	docker build -t hendrikmaus/kubernetes-dummy-image:latest .
 .PHONY: build
