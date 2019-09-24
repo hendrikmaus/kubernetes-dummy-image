@@ -11,7 +11,9 @@ RUN apt-get update -q \
 	&& curl -LO "https://github.com/fullstorydev/grpcurl/releases/download/v1.0.0/grpcurl_1.0.0_linux_x86_64.tar.gz" \
 	&& tar xvf grpcurl_1.0.0_linux_x86_64.tar.gz \
 	&& mv grpcurl /usr/local/bin \
-	&& rm -f grpcurl_1.0.0_linux_x86_64.tar.gz
+	&& rm -f grpcurl_1.0.0_linux_x86_64.tar.gz \
+	&& curl -LO "https://github.com/fortio/fortio/releases/download/v1.3.1/fortio_1.3.1-1_amd64.deb" \
+	&& dpkg -i fortio_1.3.1-1_amd64.deb
 
 COPY --from=build-env /go/src/app/pause /
 CMD [ "/pause" ]
