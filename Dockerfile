@@ -6,7 +6,7 @@ RUN make build-golang
 FROM debian:9-slim
 RUN apt-get update -q \
   && apt-get install -qy \
-	 curl telnet netcat vim jq net-tools iputils-ping dnsutils \
+	 curl telnet netcat vim jq net-tools iputils-ping dnsutils less watch \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& curl -LO "https://github.com/fullstorydev/grpcurl/releases/download/v1.0.0/grpcurl_1.0.0_linux_x86_64.tar.gz" \
 	&& tar xvf grpcurl_1.0.0_linux_x86_64.tar.gz \
